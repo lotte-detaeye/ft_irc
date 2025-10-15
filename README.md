@@ -17,7 +17,7 @@ make
 
 This will produce an executable called ircserv.
 
-## 🚀 Usage
+## Usage
 
 Run the server with a chosen port and password:
 
@@ -63,7 +63,7 @@ Open HexChat → Network List → Add
 
     Password: the same as the one you passed to ircserv (e.g. hello)
 
-  Connect!
+- Connect!
 
     You should see connection messages in the HexChat log window.
 
@@ -140,5 +140,6 @@ Project made with @shehanish and @mimonata
     RFC 2812: Internet Relay Chat: Client Protocol
 
     RFC 1459: Original IRC Protocol Specification
+
 
 
