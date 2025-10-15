@@ -1,7 +1,7 @@
 # ft_irc
 
 An implementation of an IRC (Internet Relay Chat) server in C++, compatible with RFC 2812.  
-This project is part of the 42 curriculum and aims to build a fully functional IRC server that can interact with real IRC clients such as HexChat, irssi, or netcat.
+This project aims to build a fully functional IRC server that can interact with real IRC clients such as HexChat, irssi, or netcat.
 
 ---
 
@@ -39,35 +39,35 @@ To test your server using HexChat:
 
 Install HexChat
 
-  On macOS: brew install --cask hexchat
+    On macOS: brew install --cask hexchat
 
-  On Linux (Debian/Ubuntu): sudo apt install hexchat
+    On Linux (Debian/Ubuntu): sudo apt install hexchat
 
-  On Windows: Download from the official site
+    On Windows: Download from the official site
 
 Open HexChat → Network List → Add
 
-  Name your network (e.g. ft_irc).
+    Name your network (e.g. ft_irc).
 
-  Click Edit...
+    Click Edit...
 
-  Add a new server:
+    Add a new server:
 
-    localhost/6667
+      localhost/6667
 
-  Uncheck “Use global user information” and set:
+    Uncheck “Use global user information” and set:
 
-  Nickname: your test nick (e.g. JonkyBlonkers)
+    Nickname: your test nick (e.g. BillieBob)
 
-  Login method: none
+    Login method: none
 
-  Password: the same as the one you passed to ircserv (e.g. mypass)
+    Password: the same as the one you passed to ircserv (e.g. hello)
 
   Connect!
 
-  You should see connection messages in the HexChat log window.
+    You should see connection messages in the HexChat log window.
 
-  You can now try commands such as /join, /nick, /privmsg, etc.
+    You can now try commands such as /join, /nick, /privmsg, etc.
 
 If you just want to test quickly without HexChat, you can also connect using nc (netcat):
 
@@ -142,3 +142,4 @@ The server uses poll() to handle multiple clients concurrently in a single threa
     RFC 2812: Internet Relay Chat: Client Protocol
 
     RFC 1459: Original IRC Protocol Specification
+
