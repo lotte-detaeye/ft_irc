@@ -39,23 +39,23 @@ To test your server using HexChat:
 
 Install HexChat
 
-    On macOS: brew install --cask hexchat
+- On macOS: brew install --cask hexchat
 
-    On Linux (Debian/Ubuntu): sudo apt install hexchat
+- On Linux (Debian/Ubuntu): sudo apt install hexchat
 
-    On Windows: Download from the official site
+- On Windows: Download from the official site
 
 Open HexChat → Network List → Add
 
-    Name your network (e.g. ft_irc).
+- Name your network (e.g. ft_irc).
 
-    Click Edit...
+- Click Edit...
 
-    Add a new server:
+- Add a new server:
 
       localhost/6667
 
-    Uncheck “Use global user information” and set:
+- Uncheck “Use global user information” and set:
 
     Nickname: your test nick (e.g. BillieBob)
 
@@ -133,13 +133,12 @@ The server uses poll() to handle multiple clients concurrently in a single threa
 
 ## Authors
 
-    [Your Name] — 42Berlin
-
-    Collaborators: [Names, GitHub links]
+Project made with @shehanish and @mimonata
 
 ## References
 
     RFC 2812: Internet Relay Chat: Client Protocol
 
     RFC 1459: Original IRC Protocol Specification
+
 
