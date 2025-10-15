@@ -40,17 +40,13 @@ To test your server using HexChat:
 Install HexChat
 
 - On macOS: brew install --cask hexchat
-
 - On Linux (Debian/Ubuntu): sudo apt install hexchat
-
 - On Windows: Download from the official site
 
 Open HexChat → Network List → Add
 
 - Name your network (e.g. ft_irc).
-
 - Click Edit...
-
 - Add a new server:
 
       localhost/6667
@@ -58,15 +54,12 @@ Open HexChat → Network List → Add
 - Uncheck “Use global user information” and set:
 
     Nickname: your test nick (e.g. BillieBob)
-
     Login method: none
-
     Password: the same as the one you passed to ircserv (e.g. hello)
 
 - Connect!
 
     You should see connection messages in the HexChat log window.
-
     You can now try commands such as /join, /nick, /privmsg, etc.
 
 If you just want to test quickly without HexChat, you can also connect using nc (netcat):
@@ -79,38 +72,24 @@ nc localhost 6667
 🔹 Connection & Registration
 
     PASS <password> — authenticate before registration
-
     NICK <nickname> — set or change nickname
-
     USER <username> <hostname> <servername> <realname> — register user
-
     QUIT [message] — disconnect from the server
 
 🔹 Channel Management
 
     JOIN <#channel> — join or create a channel
-
     PART <#channel> [message] — leave a channel
-
     TOPIC <#channel> [topic] — view or set the channel topic
-
     MODE <#channel> <modes> [parameters] — set channel modes (e.g. +i, +t, +k, +o, +l)
-
     KICK <#channel> <user> [comment] — remove a user from a channel
-
     INVITE <nickname> <#channel> — invite a user to a channel
 
 🔹 Messaging
 
     PRIVMSG <target> <message> — send a private message to a user or channel
 
-    NOTICE <target> <message> — send a notice (non-replyable message)
-
 🔹 Miscellaneous
-
-    PING <token> — check server latency / keep connection alive
-
-    PONG <token> — response to a PING
 
     WHOIS <nickname> — show information about a user
 
@@ -140,6 +119,7 @@ Project made with @shehanish and @mimonata
     RFC 2812: Internet Relay Chat: Client Protocol
 
     RFC 1459: Original IRC Protocol Specification
+
 
 
 
