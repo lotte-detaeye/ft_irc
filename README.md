@@ -53,9 +53,9 @@ Open HexChat → Network List → Add
 
 - Uncheck “Use global user information” and set:
 
-    Nickname: your test nick (e.g. BillieBob)
-    Login method: none
-    Password: the same as the one you passed to ircserv (e.g. hello)
+  Nickname: your test nick (e.g. BillieBob)
+  Login method: none
+  Password: the same as the one you passed to ircserv (e.g. hello)
 
 - Connect!
 
@@ -93,20 +93,6 @@ nc localhost 6667
 
     WHOIS <nickname> — show information about a user
 
-## Code Overview
-
-src/
-├── server/
-│   ├── Server.cpp      # Main server logic
-│   ├── Command.cpp     # Command parsing & execution
-│   ├── Client.cpp      # Client management
-│   ├── Channel.cpp     # Channel management
-│   └── ...
-include/
-├── Server.hpp
-├── Client.hpp
-├── Channel.hpp
-└── ...
 
 The server uses poll() to handle multiple clients concurrently in a single thread, ensuring non-blocking I/O and real-time communication.
 
@@ -119,6 +105,7 @@ Project made with @shehanish and @mimonata
     RFC 2812: Internet Relay Chat: Client Protocol
 
     RFC 1459: Original IRC Protocol Specification
+
 
 
 
