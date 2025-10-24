@@ -55,7 +55,7 @@ Open HexChat → Network List → Add
 
   - Nickname: your test nick (e.g. BillieBob)
   - Login method: none
-  - Password: the same as the one you passed to ircserv (e.g. robeme)
+  - Password: the same as the one you passed to ircserv (e.g. eggdrop)
 
 - Connect!
 
@@ -105,6 +105,7 @@ Project made with @shehanish and @mimonata
     RFC 2812: Internet Relay Chat: Client Protocol
 
     RFC 1459: Original IRC Protocol Specification
+
 
 
 
