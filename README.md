@@ -1,4 +1,4 @@
-# My_irc
+# My_IRC
 
 An implementation of an IRC (Internet Relay Chat) server in C++, compatible with the RFC 2812 protocol.  
 This project aims to build a fully functional IRC server that can interact with real IRC clients such as HexChat, irssi, or netcat.
@@ -108,6 +108,7 @@ Project made with @shehanish and @mimonata
     RFC 2812: Internet Relay Chat: Client Protocol
 
     RFC 1459: Original IRC Protocol Specification
+
 
 
 
