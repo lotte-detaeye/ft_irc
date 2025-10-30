@@ -72,6 +72,8 @@ Open HexChat → Network List → Add
     You should see connection messages in the HexChat log window.
     You can now try commands such as /join, /nick, /privmsg, etc.
 
+  In the /docs folder some more extensive guides can be found to run you through the error and channel testing.
+
 
 ## Implemented Commands
 🔹 Connection & Registration
@@ -110,6 +112,7 @@ Project made with @shehanish and @mimonata
     RFC 2812: Internet Relay Chat: Client Protocol
 
     RFC 1459: Original IRC Protocol Specification
+
 
 
 
