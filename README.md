@@ -28,7 +28,7 @@ Run the server with a chosen port and password:
 For example:
 
 ```bash
-./ircserv 6667 mypass
+./ircserv 5506 hello
 ```
 
 The server will start listening for incoming connections on the given port.
@@ -49,7 +49,7 @@ Open HexChat → Network List → Add
 - Click Edit...
 - Add a new server:
 
-      localhost/6667
+      localhost/5506
 
 - Uncheck “Use global user information” and set:
 
@@ -62,11 +62,12 @@ Open HexChat → Network List → Add
     You should see connection messages in the HexChat log window.
     You can now try commands such as /join, /nick, /privmsg, etc.
 
-If you just want to test quickly without HexChat, you can also connect using nc (netcat):
+You can also connect using nc (netcat):
 
 ```bash
-nc localhost 6667
+nc -C localhost 5506
 ```
+Scripts and examples for testing can be found in the /docs and /tests folders of this project!
 
 ## Implemented Commands
 🔹 Connection & Registration
@@ -105,6 +106,7 @@ Project made with @shehanish and @mimonata
     RFC 2812: Internet Relay Chat: Client Protocol
 
     RFC 1459: Original IRC Protocol Specification
+
 
 
 
