@@ -1,6 +1,9 @@
-# Testing Channels with Multiple Clients
+# Testing Channels with Multiple Clients in HexChat
 
-## You Have 3 Clients Connected! 🎉
+Authenticate first using 
+```
+/pass <yourpassword>
+```
 
 Now let's test channel functionality:
 
