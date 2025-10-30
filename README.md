@@ -33,7 +33,17 @@ For example:
 
 The server will start listening for incoming connections on the given port.
 
-## Testing with HexChat
+## Testing
+
+Scripts and examples for testing can be found in the /docs and /tests folders of this project!
+
+You can connect in a very basic way to the server using nc (netcat):
+
+```bash
+nc -C localhost 5506
+```
+Please note that in netcat you don't need any preceding backslash or other characters when you enter commands. The -C flag will make sure \r\n is sent after each command
+
 
 To test your server using HexChat:
 
@@ -62,14 +72,6 @@ Open HexChat → Network List → Add
     You should see connection messages in the HexChat log window.
     You can now try commands such as /join, /nick, /privmsg, etc.
 
-You can also connect using nc (netcat):
-
-```bash
-nc -C localhost 5506
-```
-Please not that in netcat you don't need the preceding backslash when you enter commands. The -C flag will make sure \r\n is sent after each command! 
-
-Scripts and examples for testing can be found in the /docs and /tests folders of this project!
 
 ## Implemented Commands
 🔹 Connection & Registration
@@ -108,6 +110,7 @@ Project made with @shehanish and @mimonata
     RFC 2812: Internet Relay Chat: Client Protocol
 
     RFC 1459: Original IRC Protocol Specification
+
 
 
 
