@@ -6,7 +6,7 @@
 /*   By: lde-taey <lde-taey@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 16:56:28 by lde-taey          #+#    #+#             */
-/*   Updated: 2025/10/15 12:41:32 by lde-taey         ###   ########.fr       */
+/*   Updated: 2025/10/30 11:58:00 by lde-taey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,13 @@ class Client
 		int 				_nb_chan;
 		std::set<Channel *> _channels;
 
+		Client(const Client& oth);
+		Client& operator=(const Client& oth);
+
 	public:
 		// Constructors & Destructor
 		Client();
 		Client(int fd, const std::string& ip);
-		Client(const Client& oth);
-		Client& operator=(const Client& oth);
 		~Client();
 
 		// Getters
@@ -85,9 +86,6 @@ class Client
 		std::vector<std::string> receiveData(const char *data, size_t len);
 		bool flush();
 		void appendToSendBuffer(const std::string& data);
-		// void clearSendBuffer();
-		void queueMsg(const std::string &msg); 
-		void sendMsg(Client &client, const std::string &msg);
 
 		//Registration
 		bool    isRegistered() const { return _isRegistered; };

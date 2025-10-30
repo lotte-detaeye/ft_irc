@@ -6,7 +6,7 @@
 /*   By: lde-taey <lde-taey@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 16:57:14 by lde-taey          #+#    #+#             */
-/*   Updated: 2025/10/15 12:42:25 by lde-taey         ###   ########.fr       */
+/*   Updated: 2025/10/30 11:57:49 by lde-taey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ Client::Client()
 				_sendBuffer(), _isAuthenticated(false), _isRegistered(false),
 				_nb_chan(0), _channels() {};
 
-Client::~Client()
-	{
-		// std::cout << "Client has destroyed" << std::endl;
-	}
+Client::~Client() {}
 
 Client::Client(int fd, const std::string& ip) 
 		: _fd(fd), 
@@ -35,32 +32,31 @@ Client::Client(int fd, const std::string& ip)
 		_nb_chan(0),
 		_channels()	{};
 
-// maybe it is too tricky to add a copying possibility? two similar fd's might be a problem
-// Client::Client(const Client& oth) 
-// 		:_fd(oth._fd),
-// 		_ipAddress(oth._ipAddress),
-// 		_nick(oth._nick),
-// 		_username(oth._username),
-// 		_realname(oth._realname),
-// 		_recvBuffer(oth._recvBuffer),
-// 		_sendBuffer(oth._sendBuffer),
-// 		_isAuthenticated(oth._isAuthenticated) {};
+Client::Client(const Client& oth) 
+		:_fd(oth._fd),
+		_ipAddress(oth._ipAddress),
+		_nick(oth._nick),
+		_username(oth._username),
+		_realname(oth._realname),
+		_recvBuffer(oth._recvBuffer),
+		_sendBuffer(oth._sendBuffer),
+		_isAuthenticated(oth._isAuthenticated) {};
 
-// Client&	Client::operator=(const Client& oth) 
-// {
-// 	if(this != &oth)
-// 	{
-// 		_fd = oth._fd;
-// 		_ipAddress = oth._ipAddress;
-// 		_nick = oth._nick;
-// 		_username = oth._username;
-// 		_realname = oth._realname;
-// 		_recvBuffer = oth._recvBuffer;
-// 		_sendBuffer = oth._sendBuffer;
-// 		_isAuthenticated = oth._isAuthenticated;
-// 	}
-// 	return *this;
-// }
+Client&	Client::operator=(const Client& oth) 
+{
+	if(this != &oth)
+	{
+		_fd = oth._fd;
+		_ipAddress = oth._ipAddress;
+		_nick = oth._nick;
+		_username = oth._username;
+		_realname = oth._realname;
+		_recvBuffer = oth._recvBuffer;
+		_sendBuffer = oth._sendBuffer;
+		_isAuthenticated = oth._isAuthenticated;
+	}
+	return *this;
+}
 
 // Getters 
 
@@ -191,24 +187,6 @@ void Client::appendToSendBuffer(const std::string& data)
     _sendBuffer += data;
 }
 
-// with implemented buffer it would be a bad idea to clear out everything
-// void Client::clearSendBuffer() 
-// {
-//     _sendBuffer.clear();
-// }
-
-void Client::queueMsg(const std::string &msg) 
-{
-    _sendBuffer += msg + "\r\n";
-}
-
-void Client::sendMsg(Client &client, const std::string &msg)
-{
-	queueMsg(msg); // server manages the messages completely with flush
-	(void)client;
-    // ::send(client.getFd(), _sendBuffer.c_str(), _sendBuffer.size(), 0);
-}
-
 void Client::addUserChannel(Channel* channel) {
     if (!channel) return;
     _channels.insert(channel);  // std::set ignores duplicates automatically
@@ -217,7 +195,7 @@ void Client::addUserChannel(Channel* channel) {
 // Remove a channel from the client's set
 void Client::delUserChannel(Channel* channel) {
     if (!channel) return;
-    _channels.erase(channel);  // safe even if channel is not in the set
+    _channels.erase(channel);  // save even if channel is not in the set
 }
 
 // Return the number of channels this client is in

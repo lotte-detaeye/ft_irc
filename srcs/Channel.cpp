@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Channel.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lde-taey <lde-taey@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 21:01:19 by spitul            #+#    #+#             */
-/*   Updated: 2025/10/14 16:07:21 by shkaruna         ###   ########.fr       */
+/*   Updated: 2025/10/27 15:32:46 by lde-taey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ void	Channel::addUser(Client &user)
 {
 	if (_limit.active && static_cast<size_t>(_limit.value) >= _members.size())
 	{
-		const std::string	msg = "Channel limit reached"; //check IRC docs
-		send(user.getFd(), msg.c_str(), msg.size(), 0);
+		std::string	error = ":localhost 471 " + user.getNick() + " " + this->_name + " :Cannot join channel (+l)\r\n";
+		user.appendToSendBuffer(error);
 		return;
 	}
 	_members.insert(&user);
@@ -149,6 +149,11 @@ bool	Channel::isInviteOnly()
 	return _invite.active;
 }
 
+bool Channel::empty() const
+{
+    return _members.empty();
+}
+
 void	Channel::setInviteOnly(bool enableInvite)
 {
 	if (enableInvite)
@@ -191,7 +196,10 @@ Channel::LimitMode	Channel::hasLimit()
 
 void	Channel::setLimit(int &newLimit)
 {
-	_limit.active = true;
+	if (newLimit == 0)
+		_limit.active = false;
+	else
+		_limit.active = true;
 	_limit.value = newLimit;	
 }
 
