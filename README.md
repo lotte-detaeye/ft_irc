@@ -67,6 +67,8 @@ You can also connect using nc (netcat):
 ```bash
 nc -C localhost 5506
 ```
+Please not that in netcat you don't need the preceding backslash when you enter commands. The -C flag will make sure \r\n is sent after each command! 
+
 Scripts and examples for testing can be found in the /docs and /tests folders of this project!
 
 ## Implemented Commands
@@ -106,6 +108,7 @@ Project made with @shehanish and @mimonata
     RFC 2812: Internet Relay Chat: Client Protocol
 
     RFC 1459: Original IRC Protocol Specification
+
 
 
 
